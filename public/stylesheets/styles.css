@@ -5,6 +5,7 @@ body {
 }
 
 #particles-js{ 
+  margin: 0;
   position:absolute;
   width: 100%;
   height: 100%; 
@@ -16,43 +17,141 @@ body {
 }
 
 .mainContent {
+  margin: 0;
+  aspect-ratio: 1.5 / 1;
   position: absolute;
   color:white;
-  border-radius: 50px;
+  border-radius: 8%;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(196, 196, 196, 0.5);
   background-color: rgb(11, 11, 11, 0.8);
-  height: 70%;
   width: 50%;
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
 }
 
 .profileContent {
+  margin: 0;
   width: 50%;
-  height: 100px;
+  height: 15%;
   padding-left: 25px;
   padding-top: 25px;
   padding-bottom: 25px;
-  border-width: 0px 1px 1px 0px;
+  display:flex;
+  gap: 15px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2vw;
+}
+
+p {
+  margin: 0;
+  font-size: 1vw;
+}
+
+hr {
   border-color: rgb(196, 196, 196, 0.5);
-  border-style: solid;
+  border-style:dashed;
+  width: 50%;
+  margin-left: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.userContent {
+  gap: 5%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .icons {
   display: flex;
-  width: 350px;
-  height: 35px;
-  gap: 10px;
+  gap: 5%;
+  width: 70%; 
+  height: auto;
+}
+
+.icon {
+  color: white; 
+  text-decoration: none; 
+  font-size: 1.6vw;
 }
 
 .currentProjects {
   width: 50%;
-  height: 300px;
+  height: 50%;
   padding-left: 25px;
   padding-bottom: 25px;
-  border-width: 0px 1px 1px 0px;
-  border-color: rgb(196, 196, 196, 0.5);
+}
+
+.visit {
+  margin-top: 10px;
+  color: white;
+  width: 30%;
+  height: 15%;
+  border-radius: 5px;
+  border-width: 1px;
   border-style: solid;
+  border-color: rgb(196, 196, 196, 0.5);
+  background-color: rgb(196, 196, 196, 0);
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.visit:hover {
+  cursor: pointer;
+  translate: 0 -5px 0;
+  scale: 1.05;
+  rotate: -1deg;
+}
+
+.visit:disabled,
+.visit[disabled] {
+  color: rgba(116, 116, 116);
+  background-color: rgb(196, 196, 196, 0);
+  border-color: rgba(116, 116, 116, 0.5);
+  pointer-events: none;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+    .mainContent {
+      margin: 0;
+      aspect-ratio: 1 / 1.5;
+      position: absolute;
+      color:white;
+      border-radius: 8%;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(196, 196, 196, 0.5);
+      background-color: rgb(11, 11, 11, 0.8);
+      width: 60%;
+      backdrop-filter: blur(2.5px);
+      -webkit-backdrop-filter: blur(2.5px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2vh;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 1vh;
+    }
+
+    .icon {
+      color: white; 
+      text-decoration: none; 
+      font-size: 1.6vh;
+    }
 }
