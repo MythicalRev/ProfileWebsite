@@ -1,14 +1,10 @@
 {
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "ejs": "^3.1.10",
-    "express": "^4.21.1",
-    "express-session": "^1.18.1",
-    "multer": "^1.4.5-lts.1",
-    "sqlite3": "^5.1.7"
+    "express": "^4.21.1"
   },
-  "name": "ejstestidkwhatimdoin",
+  "name": "profilewebsite",
   "version": "1.0.0",
   "description": "MarkDown",
   "main": "index.js",
@@ -17,7 +13,7 @@
     "build": "npm install"
   },
   "keywords": [],
-  "author": "",
+  "author": "MythicalRev",
   "license": "ISC",
   "devDependencies": {
     "webpack-cli": "^5.1.4"
