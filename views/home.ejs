@@ -50,14 +50,63 @@
               <p style="font-size: 0.75vw;"><%= json.data.spotify.artist %></p>
             </div>
           <% } else { %>
-            <p>Not Listening to Spotify</p>
+            <p style="margin: auto; font-size: 1vw; font-weight: bold;">Not Listening to Spotify</p>
           <% } %>
         </div>
       </div>
+
+      <div class="footerContent">
+        <button class="projectButton" id="button" style="font-size: 1.5vh; font-weight: bold;">Projects</button>
+        <a href="https://github.com/MythicalRev"><i style="font-size: 1.5vw;" class="fa-brands fa-github fa-2xl"></i></a>
+        <a href="https://discord.com/users/501514913026408448"><i style="font-size: 1.5vw;" class="fa-brands fa-discord fa-2xl"></i></a>
+        <a href="https://www.youtube.com/@mythicalrev"><i style="font-size: 1.5vw;" class="fa-brands fa-youtube fa-2xl"></i></a>
+        <a href="https://www.twitch.tv/mythicalrev02"><i style="font-size: 1.5vw;" class="fa-brands fa-twitch"></i></a>
+      </div>
+    </div>
+
+    <div id="projects" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-body">
+          <span class="close">&times;</span>
+          <p style="font-size: 2vh; font-weight: bold;">Roblox Delving Game (UNFINISHED)<a><button disabled class="visitBtn" style="margin-left: 20px; font-size: 1.5vh; font-weight: bold;">Visit</button></a></p>
+          <br>
+          <p style="font-size: 2vh; font-weight: bold;">Beat Saber Stats<a href="https://bs.mythicalrev.dev"><button disabled class="visitBtn" style="margin-left: 20px; font-size: 1.5vh; font-weight: bold;">Visit</button></a></p>
+        </div>
+      </div>
+    
     </div>
   
   <div id="particles-js"></div>
   
   <script src="/scripts/particles.js"></script>
   <script src="/scripts/script.js"></script>
+
+  <script>
+    var modal = document.getElementById("projects");
+
+// Get the button that opens the modal
+var btn = document.getElementById("button");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "flex";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+  </script>
 </body>

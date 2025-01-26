@@ -75,9 +75,138 @@ body {
   border-style: solid;
 }
 
+.footerContent {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
 h1, p {
   gap:0px;
   margin: 0px;
+}
+
+.projectButton {
+  background-color: rgb(25, 25, 25, .5);
+  border-radius: 1vw;
+  border-width: 0.8px;
+  border-color: gray;
+  border-style: solid;
+  height: 5vh;
+  width: 10vw;
+  color: white;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  position: absolute;
+  left: 1.5vw;
+}
+
+.projectButton:hover {
+  transform: rotate(-5deg) scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+.fa-brands {
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+}
+
+.fa-brands:hover {
+  transform: rotate(10deg) scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  width: 40%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  background-color: rgb(15, 15, 15, 0.25);
+  
+  border-radius: 1vw;
+  border-width: 1px;
+  border-color: gray;
+  border-style: solid;
+  aspect-ratio: 1 / 0.6;
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {opacity:0} 
+  to {opacity:1}
+}
+
+@keyframes animatetop {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  font-size: 2vw;
+  font-weight: bold;
+  position: absolute;
+  left: 95%;
+  bottom: 90%;
+}
+
+.close:hover,
+.close:focus {
+  color: #6e6e6e;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.visitBtn {
+  background-color: rgb(25, 25, 25, .5);
+  border-radius: 1vw;
+  border-width: 0.8px;
+  border-color: gray;
+  border-style: solid;
+  height: 5vh;
+  width: 10vw;
+  color: white;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+}
+
+.visitBtn:hover:enabled {
+  transform: rotate(-5deg) scale(1.05, 1.05);
+  cursor: pointer;
+}
+
+.visitBtn:disabled,
+.visitBtn[disabled] {
+  cursor: not-allowed;
+  background-color: rgb(1, 1, 1, .5);
 }
 
 @media (pointer:none), (pointer:coarse) {
