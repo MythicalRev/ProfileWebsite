@@ -1,157 +1,96 @@
 body {
   background: rgb(10, 10, 10);
   margin:0; 
+  width: 100vw;
+  height:100vh;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#particles-js{ 
-  margin: 0;
-  position:absolute;
-  width: 100%;
-  height: 100%; 
-  background: rgb(10, 10, 10);
+#particles-js {
+  margin:0; 
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url('');
+  background-color: rgb(10, 10, 10);;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -10;
 }
 
 .mainContent {
-  margin: 0;
-  aspect-ratio: 1.5 / 1;
-  position: absolute;
-  color:white;
-  border-radius: 8%;
+  width: 45vw;
+  background-color: rgb(15, 15, 15, 0.25);
+  justify-items: center;
+  border-radius: 1vw;
   border-width: 1px;
+  border-color: gray;
   border-style: solid;
-  border-color: rgb(196, 196, 196, 0.5);
-  background-color: rgb(11, 11, 11, 0.8);
-  width: 50%;
+  aspect-ratio: 1 / 0.6;
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
 }
 
-.profileContent {
-  margin: 0;
-  width: 50%;
-  height: 15%;
-  padding-left: 25px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  display:flex;
-  gap: 15px;
+.infoContent {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
 }
 
-h1 {
-  margin: 0;
-  font-size: 2vw;
-}
-
-p {
-  margin: 0;
-  font-size: 1vw;
-}
-
-hr {
-  border-color: rgb(196, 196, 196, 0.5);
-  border-style:dashed;
-  width: 50%;
-  margin-left: 0;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.userContent {
-  gap: 5%;
-  width: 50%;
+.nameContent {
+  width: 100%;
   height: 100%;
+  justify-content: center;
+  margin-left: 20px;
+  gap:10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.icons {
+.statusContent {
+  width: 90%;
+  height: 30%;
   display: flex;
-  gap: 5%;
-  width: 70%; 
-  height: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.icon {
-  color: white; 
-  text-decoration: none; 
-  font-size: 1.6vw;
-}
-
-.currentProjects {
-  width: 50%;
-  height: 50%;
-  padding-left: 25px;
-  padding-bottom: 25px;
-}
-
-.visit {
-  margin-top: 10px;
-  color: white;
-  width: 30%;
-  height: 15%;
-  border-radius: 5px;
+.discordContent {
+  width: 45%;
+  height: 60%;
+  background-color: rgb(25, 25, 25, .5);
+  border-radius: 1vw;
+  display:flex;
+  align-items: center;
   border-width: 1px;
+  border-color: gray;
   border-style: solid;
-  border-color: rgb(196, 196, 196, 0.5);
-  background-color: rgb(196, 196, 196, 0);
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-.visit:hover {
-  cursor: pointer;
-  translate: 0 -5px 0;
-  scale: 1.05;
-  rotate: -1deg;
+h1, p {
+  gap:0px;
+  margin: 0px;
 }
 
-.visit:disabled,
-.visit[disabled] {
-  color: rgba(116, 116, 116);
-  background-color: rgb(196, 196, 196, 0);
-  border-color: rgba(116, 116, 116, 0.5);
-  pointer-events: none;
-}
+@media (pointer:none), (pointer:coarse) {
+  .mainContent {
+    aspect-ratio: 0.6 / 0.8;
+    width:80%;
+  }
 
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-    .mainContent {
-      margin: 0;
-      aspect-ratio: 1 / 1.5;
-      position: absolute;
-      color:white;
-      border-radius: 8%;
-      border-width: 1px;
-      border-style: solid;
-      border-color: rgb(196, 196, 196, 0.5);
-      background-color: rgb(11, 11, 11, 0.8);
-      width: 60%;
-      backdrop-filter: blur(2.5px);
-      -webkit-backdrop-filter: blur(2.5px);
-    }
+  .statusContent {
+    grid-template-columns: auto;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: 2vh;
-    }
-    
-    p {
-      margin: 0;
-      font-size: 1vh;
-    }
-
-    .icon {
-      color: white; 
-      text-decoration: none; 
-      font-size: 1.6vh;
-    }
+  .discordContent {
+    width: 60%;
+  }
 }

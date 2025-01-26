@@ -2,39 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MythicalRev</title>
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <script src="https://kit.fontawesome.com/70d1544551.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-  <div id="particles-js">
+  
     <div class="mainContent">
-      <div class="profileContent">
-        <img src="https://cdn.discordapp.com/avatars/501514913026408448/0518ebf5cb6631bed4b89477d338f6ae?size=1024" style="border-color: rgb(196, 196, 196, 0.5); border-width: 1px; border-style: solid; width: auto; height: auto; aspect-ratio: 1 / 1; border-radius: 100%;"></img>
-        <div class="userContent">
-          <h1>MythicalRev</h1>
-          <p>Developer</p>
-          <div class="icons">
-            <a href="https://github.com/MythicalRev" class="fa-brands fa-github icon"></a>
-            <a href="https://discord.com/users/501514913026408448" class="fa-brands fa-discord icon"></a>
-            <a href="https://www.youtube.com/@mythicalrev" class="fa-brands fa-youtube icon"></a>
-            <a href="https://www.twitch.tv/mythicalrev02" class="fa-brands fa-twitch icon"></a>
-          </div>
+      <div class="infoContent">
+        <img width="25%" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="border-radius: 100%; aspect-ratio: 1 / 1;"></img>
+        <div class="nameContent">
+          <h1 style="font-size: 2vw;">MythicalRev</h1>
+          <p style="font-size: 1.25vw;">Hello, my name is Mythical and I enjoy things like coding and playing games with friends</p>
         </div>
       </div>
-
-      <div class="currentProjects">
-        <h1>Current Projects</h1>
-        <br>
-        <h1 style="font-size: medium;">Roblox Delving Game (UNNAMED)</h1>
-        <a><button disabled class="visit">Visit</button></a>
-        <hr>
-        <h1 style="font-size: medium;">This Website</h1>
-        <a href=""><button class="visit">Visit</button></a>
+      <div class="statusContent">
+        <div class="discordContent">
+          <% if (json.data.discord_status == "online") { %>
+            <img width="20%" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="aspect-ratio: 1 / 1; border-radius: 100px; margin-left: 10px; border-color: lime; border-style: solid; border-width: 0.25vw;"></img>
+          <% } else if (json.data.discord_status == "dnd") { %>
+            <img width="20%" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="aspect-ratio: 1 / 1; border-radius: 100px; margin-left: 10px; border-color: red; border-style: solid; border-width: 0.25vw;"></img>
+          <% } else if (json.data.discord_status == "idle") { %>
+            <img width="20%" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="aspect-ratio: 1 / 1; border-radius: 100px; margin-left: 10px; border-color: orange; border-style: solid; border-width: 0.25vw;"></img>
+          <% } else if (json.data.discord_status == "offline") { %>
+            <img width="20%" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="aspect-ratio: 1 / 1; border-radius: 100px; margin-left: 10px; border-color: gray; border-style: solid; border-width: 0.25vw;"></img>
+          <% } %>
+          <div class="nameContent" style="margin-left: 10px;">
+            <p style="font-size: 1.1vw; font-weight: bold;"><%= json.data.discord_user.display_name %></p>
+            <% if (json.data.discord_status != "offline") { %>
+              <% if (json.data.activities[0].name == "Spotify") { %>
+                <p style="font-size: 0.8vw;">Listening to Spotify</p>
+              <% } else if (json.data.activities[0].name == "Custom Status") { %>
+                <p style="font-size: 0.8vw;"><%= json.data.activities[0].state %></p>
+              <% } else if (json.data.activities[0].name != "Spotify") { %>
+                <p style="font-size: 0.8vw;">Playing <%= json.data.activities[0].name %></p>
+              <% } %>
+            <% } %>
+          </div>
+        </div>
+  
+        <div class="discordContent">
+          <% if (json.data.spotify != null) { %>
+            <img width="20%" src="<%= json.data.spotify.album_art_url %>" style="aspect-ratio: 1 / 1; border-radius: 25%; margin-left: 10px;"></img>
+            <div class="nameContent" style="margin-left: 10px;">
+              <p style="font-size: 0.85vw; font-weight: bold;"><%= json.data.spotify.song %></p>
+              <p style="font-size: 0.75vw;"><%= json.data.spotify.artist %></p>
+            </div>
+          <% } else { %>
+            <p>Not Listening to Spotify</p>
+          <% } %>
+        </div>
       </div>
-  </div>
-
+    </div>
+  
+  <div id="particles-js"></div>
+  
   <script src="/scripts/particles.js"></script>
   <script src="/scripts/script.js"></script>
 </body>
