@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MythicalRev</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" style="border-radius: 1000px;">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <script src="https://kit.fontawesome.com/70d1544551.js" crossorigin="anonymous"></script>
 
@@ -11,7 +12,7 @@
   
     <div class="mainContent">
       <div class="infoContent">
-        <img width="25%" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="border-radius: 100%; aspect-ratio: 1 / 1;"></img>
+        <img class="pfp" src="https://cdn.discordapp.com/avatars/501514913026408448/<%= json.data.discord_user.avatar %>?size=1024" style="border-radius: 100%; aspect-ratio: 1 / 1;"></img>
         <div class="nameContent">
           <h1 style="font-size: 2vw;">MythicalRev</h1>
           <p style="font-size: 1.25vw;">Hello, my name is Mythical and I enjoy things like coding and playing games with friends</p>
@@ -30,7 +31,7 @@
           <% } %>
           <div class="nameContent" style="margin-left: 10px;">
             <p style="font-size: 1.1vw; font-weight: bold;"><%= json.data.discord_user.display_name %></p>
-            <% if (json.data.discord_status != "offline") { %>
+            <% if (json.data.discord_status != "offline" && json.data.activities[0]) { %>
               <% if (json.data.activities[0].name == "Spotify") { %>
                 <p style="font-size: 0.8vw;">Listening to Spotify</p>
               <% } else if (json.data.activities[0].name == "Custom Status") { %>
@@ -57,10 +58,10 @@
 
       <div class="footerContent">
         <button class="projectButton" id="button" style="font-size: 1.5vh; font-weight: bold;">Projects</button>
-        <a href="https://github.com/MythicalRev"><i style="font-size: 1.5vw;" class="fa-brands fa-github fa-2xl"></i></a>
-        <a href="https://discord.com/users/501514913026408448"><i style="font-size: 1.5vw;" class="fa-brands fa-discord fa-2xl"></i></a>
-        <a href="https://www.youtube.com/@mythicalrev"><i style="font-size: 1.5vw;" class="fa-brands fa-youtube fa-2xl"></i></a>
-        <a href="https://www.twitch.tv/mythicalrev02"><i style="font-size: 1.5vw;" class="fa-brands fa-twitch"></i></a>
+        <a href="https://github.com/MythicalRev"><i style="" class="fa-brands fa-github"></i></a>
+        <a href="https://discord.com/users/501514913026408448"><i style="" class="fa-brands fa-discord"></i></a>
+        <a href="https://www.youtube.com/@mythicalrev"><i style="" class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.twitch.tv/mythicalrev02"><i style="" class="fa-brands fa-twitch"></i></a>
       </div>
     </div>
 

@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -11;
 }
 
 #particles-js {
@@ -21,7 +22,7 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   position: absolute;
-  z-index: -10;
+  z-index: -1;
 }
 
 .mainContent {
@@ -114,6 +115,7 @@ h1, p {
   text-decoration: none;
   transition-duration: 0.25s;
   transition-timing-function: ease-out;
+  font-size: 1.5vw;
 }
 
 .fa-brands:hover {
@@ -209,17 +211,84 @@ h1, p {
   background-color: rgb(1, 1, 1, .5);
 }
 
+.pfp {
+  width: 25%;
+}
+
 @media (pointer:none), (pointer:coarse) {
+  body {
+    height: 89vh;
+  }
+
   .mainContent {
-    aspect-ratio: 0.6 / 0.8;
-    width:80%;
+    height: 89vh;
+    width: 100vw;
+  }
+  
+  .pfp {
+    width: 40%;
+  }
+
+  .infoContent {
+    margin-top: 8vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .nameContent {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .statusContent {
-    grid-template-columns: auto;
+    flex-direction: column;
   }
 
   .discordContent {
-    width: 60%;
+    width: 70%;
+    height: 35%;
+  }
+
+  .projectButton {
+    background-color: rgb(25, 25, 25, .5);
+    border-radius: 1vw;
+    border-width: 0.8px;
+    border-color: gray;
+    border-style: solid;
+    height: 5vh;
+    width: 25vw;
+    color: white;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    position: absolute;
+    left: 1.5vw;
+    bottom: 3vw;
+  }
+
+  .footerContent {
+    width: 98%;
+    height: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+  }
+
+  .fa-brands {
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    font-size: 8vw;
+  }
+
+  .fa-brands:hover {
+    transform: rotate(10deg) scale(1.2, 1.2);
+    cursor: pointer;
   }
 }
